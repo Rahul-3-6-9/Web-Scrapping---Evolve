@@ -2,18 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/main.py",
+      "src": "api/*.py",
       "use": "@vercel/python",
-      "config": { "runtime": "python3.10" }
+      "config": {
+        "runtime": "python3.10"
+      }
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/api/main.py"
-    }
-  ],
-  "env": {
-    "APP_MODULE": "main:app"
-  }
+    { "src": "/(.*)", "dest": "/api/main.py" }
+  ]
 }
