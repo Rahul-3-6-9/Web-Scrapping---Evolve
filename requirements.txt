@@ -4,5 +4,5 @@ requests
 pydantic
 pillow
 bs4
-opencv-python
+opencv-python-headless
 numpy
