@@ -6,7 +6,3 @@ pillow
 bs4
 opencv-python
 numpy
-os
-io
-urllib.parse
-time
