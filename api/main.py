@@ -5,7 +5,7 @@ import time
 from Test import func  # import your function
 
 import os
-print("FILES IN DIR:", os.listdir())
+print("DEBUG — files in api/:", os.listdir("/var/task/api"))
 
 app = FastAPI()
 starttime = time.perf_counter()
