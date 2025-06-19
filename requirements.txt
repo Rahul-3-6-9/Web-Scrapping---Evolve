@@ -3,3 +3,10 @@ uvicorn
 requests
 pydantic
 PIL
+bs4
+cv2
+numpy
+os
+io
+urllib.parse
+time
