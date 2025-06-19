@@ -2,8 +2,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
 import time
-from Test import func 
-from Test2 import specSheet
+from api.Test import func 
+from api.Test2 import specSheet
 app = FastAPI()
 starttime = time.perf_counter()
 class EquipmentRequest(BaseModel):
