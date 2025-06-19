@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
 import time
-from Test import func  # import your function
+from Test import func 
 from Test2 import specSheet
 app = FastAPI()
 starttime = time.perf_counter()
