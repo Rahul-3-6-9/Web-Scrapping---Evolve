@@ -2,3 +2,7 @@ fastapi
 uvicorn
 requests
 pydantic
+pillow
+bs4
+opencv-python-headless
+numpy
