@@ -4,6 +4,9 @@ from typing import Optional
 import time
 from Test import func  # import your function
 
+import os
+print("FILES IN DIR:", os.listdir())
+
 app = FastAPI()
 starttime = time.perf_counter()
 class EquipmentRequest(BaseModel):
