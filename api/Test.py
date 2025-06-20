@@ -158,11 +158,6 @@ def func(query):
         print(f"No valid images processed for {search_query}")
         unfetchedImages.append(query["id"])
 
-    # Save the best image
-    model_folder = query["manufacturer"]
-    if not os.path.exists(model_folder):
-        os.makedirs(model_folder)
-
     try:
         endtime = time.perf_counter()
         print("Time Taken:", endtime - starttime)
