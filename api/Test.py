@@ -12,7 +12,7 @@ import time
 
 starttime = time.perf_counter()
 unfetchedImages = []
-max_images = 3  # Number of images to analyze per query
+max_images = 1  # Number of images to analyze per query
 
 def any_keyword_approximately_present(text, keywords):
     text = text.lower()
