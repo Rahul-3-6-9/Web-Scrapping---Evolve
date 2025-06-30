@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 import time
-from ImageURL import ImageURL  # import your function
-from SpecSheetURL import SpecSheetURL
-from schemas import EquipmentRequest
+from .ImageURL import ImageURL  # import your function
+from .SpecSheetURL import SpecSheetURL
+from .schemas import EquipmentRequest
 
 app = FastAPI()
 starttime = time.perf_counter()
