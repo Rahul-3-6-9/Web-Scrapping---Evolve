@@ -7,12 +7,9 @@ from .schemas import EquipmentRequest
 app = FastAPI()
 starttime = time.perf_counter()
 
-# Root endpoint that redirects to SwaggerUI
 @app.get("/", include_in_schema=False)
 async def root():
-    """Redirect to SwaggerUI documentation"""
     return RedirectResponse(url="/docs")
-@app.post("/get-front-image")
 
 async def get_front_image(data: EquipmentRequest):
     _ImageURL = ImageURL(data.dict())
