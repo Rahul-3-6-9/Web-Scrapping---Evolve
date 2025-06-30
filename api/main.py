@@ -1,10 +1,9 @@
 from fastapi import FastAPI
 import time
-from starlette.responses import RedirectResponse
-
-from .ImageURL import ImageURL  # import your function
-from .SpecSheetURL import SpecSheetURL
-from .schemas import EquipmentRequest
+from fastapi.responses import RedirectResponse
+from ImageURL import ImageURL
+from SpecSheetURL import SpecSheetURL
+from schemas import EquipmentRequest
 
 app = FastAPI()
 starttime = time.perf_counter()
@@ -13,6 +12,7 @@ starttime = time.perf_counter()
 async def root():
     return RedirectResponse(url="/docs")
 
+@app.post("/get-front-image")
 async def get_front_image(data: EquipmentRequest):
     _ImageURL = ImageURL(data.dict())
     _SpecSheetURL = SpecSheetURL(data.dict())
