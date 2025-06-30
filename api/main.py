@@ -1,28 +1,18 @@
 from fastapi import FastAPI
-from fastapi.responses import RedirectResponse
-from pydantic import BaseModel
-from typing import Optional
 import time
-from .Test import func
-from .Test2 import specSheet
+from ImageURL import ImageURL  # import your function
+from SpecSheetURL import SpecSheetURL
+from schemas import EquipmentRequest
 
 app = FastAPI()
 starttime = time.perf_counter()
 
-class EquipmentRequest(BaseModel):
-    equipmentType: str
-    modelNo: str
-    manufacturer: Optional[str] = ""
-    voltageRating: Optional[str] = ""
-
-@app.get("/", include_in_schema=False)
-async def root():
-    return RedirectResponse(url="/docs")
-
 @app.post("/get-front-image")
 async def get_front_image(data: EquipmentRequest):
-    best_url = func(data.dict())
-    spec_url = specSheet(data.dict(), max_pages=3, delay=2)
+    _ImageURL = ImageURL(data.dict())
+    _SpecSheetURL = SpecSheetURL(data.dict())
+    best_url = _ImageURL.imageURLFinder()
+    spec_url = _SpecSheetURL.specSheet(max_pages=3, delay=2)
     return {
         "equipmentType": data.equipmentType,
         "modelNo": data.modelNo,
