@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 import time
+from starlette.responses import RedirectResponse
+
 from .ImageURL import ImageURL  # import your function
 from .SpecSheetURL import SpecSheetURL
 from .schemas import EquipmentRequest
