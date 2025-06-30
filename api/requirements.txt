@@ -6,3 +6,4 @@ pillow
 bs4
 opencv-python-headless
 numpy
+starlette
