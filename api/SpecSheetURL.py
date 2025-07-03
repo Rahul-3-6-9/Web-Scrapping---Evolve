@@ -26,7 +26,7 @@ class SpecSheetURL:
             self.query["manufacturer"],
             self.query["modelNo"],
             self.query["equipmentType"],
-            f"specifications sheet filetype:pdf"
+            f"data sheet filetype:pdf"
         ])
         encoded_query = quote_plus(search_query)
 
