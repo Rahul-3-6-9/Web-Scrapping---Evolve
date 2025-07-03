@@ -44,7 +44,7 @@ class SpecSheetURL:
 
     def specSheet(self, max_pages=3, delay=2) -> str:
 
-        keywords = [self.query["manufacturer"]]
+        keywords = [self.query["manufacturer"], self.query["modelNo"]]
         search_urls = self.search_engine_urls(max_pages)
 
         for search_url in search_urls:
@@ -66,7 +66,7 @@ class SpecSheetURL:
                 text = a_tag.text
                 href = a_tag.get("href")
 
-                if not (text and href and ".pdf" in href.lower() and self.any_keyword_approximately_present(text, keywords)):
+                if not (text and href and ".pdf" in href.lower() and self.any_keyword_approximately_present(href, keywords)):
                     continue
 
                 try:
