@@ -26,7 +26,7 @@ class SpecSheetURL:
             self.query["manufacturer"],
             self.query["modelNo"],
             self.query["equipmentType"],
-            f"data sheet filetype:pdf"
+            f"data sheet or specifications sheet filetype:pdf"
         ])
         encoded_query = quote_plus(search_query)
 
@@ -40,7 +40,7 @@ class SpecSheetURL:
             for i in range(max_pages)
         ]
 
-        return bing_urls + google_urls
+        return  google_urls + bing_urls
 
     def specSheet(self, max_pages=3, delay=2) -> str:
 
